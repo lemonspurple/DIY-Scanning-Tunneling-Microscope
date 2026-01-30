@@ -390,13 +390,37 @@ A[ndre Geim and Konstantin Novoselov](https://en.wikipedia.org/wiki/Discovery_of
 ![First measurements](/images/reading2.png)
 <div align="center"><sup>(Fig 18. Although pixelated and unsharp due to insufficient isolation from vibration, the image shows hexagonal repeating patterns that are associated with graphene.)</sup></div>
 
+
+## 10. Readings / Troubleshooting
+Since my LED's aren't working, I had to use the Tools > Tunnel function to test if [quantum tunneling](https://de.wikipedia.org/wiki/Tunneleffekt) has occured. I set the measuring speed to 1-20ms and checked the readings while adjusting the tip/screws. Below you can find some common readings and what they mean. The default parameters are already working pretty good.
+
+![No batteries](/images/no_batteries_connecting_z_is_not_responding.png)
+<div align="center"><sup>( Fig. 19 The DAC Z axis nosedives and there is a perfectly straight red line that usually indicates tunneling)</sup></div>
+
+The DAC Z is not working. This could be because you either forgot to plug in batteries or didn't connect them properly. If that doesn't fix your issue, the wiring is probably at fault.
+
+![Tip connects](/images/connected.png)
+<div align="center"><sup>(Fig. 20 Current flows and a straight red line is displayed as tunneling)</sup></div>
+You either found a perfectly atomically flat surface (Congrats on your nobel price) or drove the tip into your sample. This allows electricity to flow and causes the perfectly flat line. The piezo tries to pull away to correct for this, but fails because it can't build up enough distance and hence delivers the result in Fig. 20.  
+  
+
+![Tip doesn't connect](/images/no_tunneling.png)
+<div align="center"><sup>(Fig. 21 Small waves of interference are shown at the bottom)</sup></div>
+Your goal is to adjust the tip so that it almost touches the sample, but still has minimal room between the tip, then quantum tunneling will occur. In Fig. 21 you can see a result that is caused by being too far away from the sample. The pattern below is noise caused by the underlying electrical current. A second indicator is that the DAC Z doesn't correct its positioning.
+
+![Tip doesn't connect](/images/reading_1.png)
+![Tip doesn't connect](/images/reading_2.png)
+<div align="center"><sup>(Fig. 22, Fig. 23 Your first readings should look more similar to this.)</sup></div>
+If quantum tunneling occurs, the amount of electrons that are detected tunneling will increase exponentially, giving your clear peaks. The first screenshot shows a very quick measuring intervall, hence the result looks scattered. The second measures for longer and delivers a distribution that is more even. Which measuring speed you should choose depends largely on your vibration isolation too.
+
+
 <!-- 
 
 ######## CREDITS #######
 
 -->
 
-## 9. Credits / Sources / Thanks
+## 10. Credits / Sources / Thanks
 
 ### Credits / Sources
 * Piezo based STM design derived from John Alexander and Dan Berard
@@ -406,6 +430,7 @@ A[ndre Geim and Konstantin Novoselov](https://en.wikipedia.org/wiki/Discovery_of
 ### Additional Thanks
 * Chaos Computer Club Cologne for lending me their standing drill.
 * Kadse from CCCC for instructions on how to thread screws.
-* Lennart Grawe for additional knowledge transfer and sending me some chips.
+* Lennart Grawe for additional knowledge transfer and sending me some spare chips.
 * Uni Regensburg for providing said chips.
+* Thor for gifting me my first soldering iron.
 
