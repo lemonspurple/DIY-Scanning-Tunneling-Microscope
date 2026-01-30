@@ -4,7 +4,7 @@
 ![Top view of the STM.](/images/header.jpg)
 
 When [John Alexander](https://john-alexander42.github.io/simple-stm-web-page/Disk_Scanner_Exp.htm) shared his idea of using piezo elements from everyday devices like fire alarms and greeting cards as actuators for scanning tunneling microscopes, he demonstrated that nanoscopic measurement techniques can be explored by anyone curious enough.  
-This repository exists to consolidate the scattered knowledge, parts and documentation as well as preserve to create such a working instrument. 
+This repository exists to consolidate the scattered knowledge, parts and documentation as well as preserve everything needed to build your own. 
 
 > [!NOTE]
 > This project needs proofreading and the guide should be considered in-alpha.
