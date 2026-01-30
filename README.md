@@ -385,7 +385,7 @@ Select the main.py in the src folder and click the run button (Right pointing ar
 
 ## 8. Samples and Various Notes
 For samples you can use gold leafes, the conductive layer of blue rays or graphene. Graphene is a perfect first target, as you can clearly identify terraces through hexagonal patterns. You can try to get your hands on highly oriented pyrolitic graphene (HOPG), but it's tricky to aquire and expensive.
-A[ndre Geim and Konstantin Novoselov](https://en.wikipedia.org/wiki/Discovery_of_graphene) found out, that you can create graphene by using sticky tape on a graphe rich object (very soft graphit pencil works) and by removing the flexible layer (the sticky tape), effectively cleave of a slab of graphene. This can then be used as a target to image with your microscope. My first successful measurement took two days to achieve and utilized graphene pads that were sold as thermal paste substitute.
+[Andre Geim and Konstantin Novoselov](https://en.wikipedia.org/wiki/Discovery_of_graphene) found out, that you can create graphene by using sticky tape on a graphe rich object (very soft graphit pencil works) and by removing the flexible layer (the sticky tape), effectively cleave of a slab of graphene. This can then be used as a target to image with your microscope. My first successful measurement took two days to achieve and utilized graphene pads that were sold as thermal paste substitute.
 
 ![First measurements](/images/reading2.png)
 <div align="center"><sup>(Fig 18. Although pixelated and unsharp due to insufficient isolation from vibration, the image shows hexagonal repeating patterns that are associated with graphene.)</sup></div>
