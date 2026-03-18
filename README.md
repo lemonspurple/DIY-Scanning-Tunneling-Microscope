@@ -155,7 +155,7 @@ While most parts are commonly available off-the-self, there still are some outli
 
 - **Insulation:** I have crafted a sandwich out of bubble wrap and sponges that serves as an isolation from vibration to warrant that the microscope has a chance to get good readings. While this is enough to get a result, it is highly recommended to not cheap out on this aspect. There are a bunch of [approaches](https://dberard.com/home-built-stm/vibration-isolation/) how you can tackle this. A reading can take several minutes so a noisy neighbour or passing car can ruin your result.
 
-- **Operation System:** You need a computer to talk to the ESP32, flash it, and run the software. It's easies to do this on Windows, but also works with a bit of troubleshooting on Ubuntu/Linux. It should work on MacOSX too, but I haven't verified this.
+- **Operating System:** You need a computer to talk to the ESP32, flash it, and run the software. It's easies to do this on Windows, but also works with a bit of troubleshooting on Ubuntu/Linux. It should work on MacOSX too, but I haven't verified this.
 
 ### Things I Wish I Would Have Known Earlier
 
