@@ -20,6 +20,7 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+        cache: 'pip' 
 
     - name: patchelf installieren (Linux)
       if: matrix.os == 'ubuntu-latest'
@@ -28,8 +29,8 @@ jobs:
     - name: Dependencies installieren
       run: pip install nuitka -r Software/tkinter-usb-app/requirements.txt
 
-    - name: Binary bauen (Linux/Mac)
-      if: matrix.os != 'windows-latest'
+    - name: Binary bauen
+      
       working-directory: Software/tkinter-usb-app/src
       run: |
         nuitka --onefile \
@@ -39,21 +40,12 @@ jobs:
           --output-filename=STM_GUI \
           main.py
 
-    - name: Binary bauen (Windows)
-      if: matrix.os == 'windows-latest'
-      working-directory: Software/tkinter-usb-app/src
-      run: nuitka --onefile --include-package=gui --include-data-dir=assets=assets --include-data-files=config.ini=config.ini --output-filename=STM_GUI main.py
-
-    - name: Binary hochladen (Linux/Mac)
-      if: matrix.os != 'windows-latest'
+    - name: Binary hochladen
       uses: actions/upload-artifact@v4
       with:
         name: "STM_GUI-${{ matrix.os }}"
-        path: Software/tkinter-usb-app/src/STM_GUI
-
-    - name: Binary hochladen (Windows)
-      if: matrix.os == 'windows-latest'
-      uses: actions/upload-artifact@v4
-      with:
-        name: "STM_GUI-${{ matrix.os }}"
-        path: Software/tkinter-usb-app/src/STM_GUI.exe
+        
+        path: |
+          Software/tkinter-usb-app/src/STM_GUI
+          Software/tkinter-usb-app/src/STM_GUI.exe
+        if-no-files-found: error
