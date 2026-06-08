@@ -1,4 +1,4 @@
-name: Build STM_GUI
+content = """name: Build STM_GUI
 
 on:
   push:
@@ -21,21 +21,36 @@ jobs:
       with:
         python-version: '3.11'
 
+    - name: patchelf installieren (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      run: sudo apt-get install -y patchelf
+
     - name: Dependencies installieren
       run: pip install nuitka -r Software/tkinter-usb-app/requirements.txt
 
-    - name: Binary bauen
+    - name: Binary bauen (Linux/Mac)
+      if: matrix.os != 'windows-latest' ## Windows fix
       run: |
         cd Software/tkinter-usb-app/src
-        nuitka --onefile \
-          --include-package=gui \
-          --include-data-dir=assets=assets \
-          --include-data-files=config.ini=config.ini \
-          --output-filename=STM_GUI \
+        nuitka --onefile \\
+          --include-package=gui \\
+          --include-data-dir=assets=assets \\
+          --include-data-files=config.ini=config.ini \\
+          --output-filename=STM_GUI \\
           main.py
+
+    - name: Binary bauen (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        cd Software/tkinter-usb-app/src
+        nuitka --onefile --include-package=gui --include-data-dir=assets=assets --include-data-files=config.ini=config.ini --output-filename=STM_GUI main.py
 
     - name: Binary hochladen
       uses: actions/upload-artifact@v4
       with:
         name: STM_GUI-${{ matrix.os }}
         path: Software/tkinter-usb-app/src/STM_GUI*
+"""
+
+with open("/workspace/build.yml", "w") as f:
+    f.write(content)
