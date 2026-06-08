@@ -34,6 +34,7 @@ jobs:
       run: |
         python -m nuitka --onefile \
           --assume-yes-for-downloads \
+          --enable-plugin=tk-inter \
           --include-package=gui \
           --include-data-dir=assets=assets \
           --include-data-files=config.ini=config.ini \
